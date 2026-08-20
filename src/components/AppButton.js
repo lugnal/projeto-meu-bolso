@@ -5,13 +5,13 @@ export default function AppButton (
     { title, onPress, loading=false, disabled=false}
 ) {
     return (
-        <TouchableOpacity style={[Styles.button, (disabled || loading)
-            && Styles.disabled]}
+        <TouchableOpacity style={[styles.button, (disabled || loading)
+            && styles.disabled]}
         onPress={onPress}
         disabled={disabled || loading}>
         {loading?
         <ActivityIndicator color="#fff"/> :
-        <Text style={Styles.title}>{title}</Text>}
+        <Text style={styles.title}>{title}</Text>}
         </TouchableOpacity>
     );
 }
@@ -22,6 +22,6 @@ const styles = StyleSheet.create ({
         borderRadius: RADIUS.md,
         alignItems: 'center',
     },
-disabled: {opacity: 6},
-text:{color: '#fff', fontSize: 16, fontWeight: '700'},
+disabled: {opacity: .6},
+title:{color: '#fff', fontSize: 16, fontWeight: '700'},
 });
