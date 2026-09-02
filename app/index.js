@@ -74,7 +74,7 @@ export default function Login() {
 
 
       // Altere para a rota que existe no seu projeto
-      router.replace('/Home');
+      router.replace('/home');
 
     } catch (erro) {
 
@@ -136,7 +136,6 @@ export default function Login() {
           loading={loading}
           onPress={login}
         />
-
 
         <TouchableOpacity
           onPress={() => router.push('/Register')}
