@@ -16,8 +16,6 @@ import AppButton from '../src/components/AppButton.js';
 
 import { router } from 'expo-router';
 
-import { supabase } from '../src/services/supabase.js';
-
 
 export default function Login() {
 
@@ -39,60 +37,7 @@ export default function Login() {
 
       return;
     }
-
-
-    try {
-
-      setLoading(true);
-
-      const { data, error } =
-        await supabase.auth.signInWithPassword({
-          email: email.trim(),
-          password: password
-        });
-
-
-      if (error) {
-
-        console.log('Erro no login:', error);
-
-        Alert.alert(
-          'Erro ao entrar',
-          error.message
-        );
-
-        return;
-      }
-
-
-      console.log('Login realizado:', data);
-
-      Alert.alert(
-        'Sucesso',
-        'Login realizado com sucesso!'
-      );
-
-
-      // Altere para a rota que existe no seu projeto
-      router.replace('/home');
-
-    } catch (erro) {
-
-      console.log('Erro inesperado:', erro);
-
-      Alert.alert(
-        'Erro',
-        'Ocorreu um erro ao fazer login.'
-      );
-
-    } finally {
-
-      setLoading(false);
-
-    }
-
-  };
-
+  }
 
   return (
 
