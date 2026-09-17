@@ -9,12 +9,11 @@ import {
   Platform,
   Alert
 } from 'react-native';
-
 import AppInput from '../src/components/AppInput.js';
-
 import AppButton from '../src/components/AppButton.js';
 
-import { router } from 'expo-router';
+
+import { useRouter } from 'expo-router';
 
 
 export default function Login() {
@@ -25,19 +24,7 @@ export default function Login() {
 
   const [loading, setLoading] = useState(false);
 
-
-  const login = async () => {
-
-    if (!email || !password) {
-
-      Alert.alert(
-        'Atenção',
-        'Preencha o e-mail e a senha.'
-      );
-
-      return;
-    }
-  }
+  const router = useRouter();
 
   return (
 
@@ -79,11 +66,11 @@ export default function Login() {
         <AppButton
           title="Entrar"
           loading={loading}
-          onPress={login}
+          onpress={() => router.push('/home')}
         />
 
         <TouchableOpacity
-          onPress={() => router.push('/Register')}
+          onPress={() => router.push('/register')}
         >
 
           <Text style={styles.link}>
