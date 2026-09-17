@@ -22,6 +22,12 @@ const styles = StyleSheet.create ({
         borderRadius: RADIUS.md,
         alignItems: 'center',
     },
-disabled: {opacity: 6},
-title:{color: '#fff', fontSize: 16, fontWeight: '700'},
+    disabled: {
+        opacity: .6
+    },
+    title:{
+        color: '#fff', 
+        fontSize: 16, 
+        fontWeight: '700'
+    },
 });
